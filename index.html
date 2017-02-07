@@ -45,18 +45,26 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+
     </head>
     <body>
         <main>
-            <img class="die" src="img/firedie.png" />
+            <img id="die" src="img/firedie.png" />
+            <panel id="rule">
+                <h2>Irish Standoff</h2>
+                <p>
+                    Give a drink to another player. When they finish, they may give a drink back to you. Repeat until one of you opts out.
+                </p>
+            </panel>
         </main>
         <!-- Add your site or application content here -->
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
         <script src="js/vendor/jquery-2.1.0.min.js"></script>
         <script src="js/helper.js"></script>
         <script src="js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. >
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -64,6 +72,6 @@
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+        </script -->
     </body>
 </html>

@@ -15,10 +15,11 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: #fafafa;
 }
 
 body {
+    background: #252525;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -64,23 +65,57 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+body {
+  background: #252525;
+}
 main {
   height: 100%;
   width: 100%;
   position: relative;
 }
-main .die {
+main #die {
   position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-  margin: auto;
+  margin: 1rem auto;
+  transform: rotateZ(0);
+
 }
 
+#die:not(.spin) {
+  cursor: pointer;
+}
 
+#die.spin {
+  cursor: default;
+  transition: transform 1s;
+  transform: rotateZ(-720deg);
+}
 
+panel {
+  width: 480px;
+  height: 320px;
+  margin: auto;
+  padding: 1rem;
+  position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  background: rgba(0,0,0,0.8);
+  border: white solid 0.5rem;
+  border-radius: 0.25rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+panel.show {
+  opacity: 1;
+  transform: scale(1);
+}
 
 
 
