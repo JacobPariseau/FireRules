@@ -22,6 +22,7 @@ body {
     background: #252525;
     font-size: 1em;
     line-height: 1.4;
+    overflow: hidden;
 }
 
 a {
@@ -68,15 +69,35 @@ textarea {
 body {
   background: #252525;
   height: 100vh;
-}
-header h1{
-  font-size: 12vw;
   text-align: center;
 }
+
+header h1 {
+  font-size: 12vw;
+  text-align: center;
+  margin: 0;
+}
+
+header h3 {
+  margin: 0;
+  opacity: 0.6;
+}
+
 main {
   height: 100%;
   width: 100%;
   position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.don-share {
+  display: inline-block;
 }
 
 #ball-container {
@@ -94,7 +115,8 @@ main {
   transition: transform 1.5s, opacity 1.5s;
 
 }
-main #die {
+
+#die {
   position: absolute;
     left: 0;
     right: 0;
@@ -119,33 +141,33 @@ main #die {
 }
 
 @keyframes shake {
-10%, 90% {
-transform: translate3d(-5%, 10%, 0) rotate(10deg);
-}
+  10%, 90% {
+    transform: translate3d(-5%, 10%, 0) rotate(10deg);
+  }
 
-15%, 85% {
-transform: translate3d(-7%, -10%, 0) rotate(40deg);
-}
+  15%, 85% {
+    transform: translate3d(-7%, -10%, 0) rotate(40deg);
+  }
 
-20%, 80% {
-transform: translate3d(10%, -5%, 0) rotate(-90deg);
-}
-25%, 75% {
-transform: translate3d(-12%, -8%, 0) rotate(-120deg);
-}
+  20%, 80% {
+    transform: translate3d(10%, -5%, 0) rotate(-90deg);
+  }
+  25%, 75% {
+    transform: translate3d(-12%, -8%, 0) rotate(-120deg);
+  }
 
-30%, 50%, 70% {
-transform: translate3d(-20%, -15%, 0) rotate(50deg);
-}
+  30%, 50%, 70% {
+    transform: translate3d(-20%, -15%, 0) rotate(50deg);
+  }
 
-40%, 60% {
-transform: translate3d(20%, 30%, 0) rotate(-90deg);
-}
+  40%, 60% {
+    transform: translate3d(20%, 30%, 0) rotate(-90deg);
+  }
 }
 panel {
   width: 480px;
   max-width: 90%;
-  height: 320px;
+  height: 100px;
   margin: auto;
   padding: 1rem;
   position: fixed;
