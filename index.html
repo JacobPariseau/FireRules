@@ -9,6 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
         <meta http-equiv="cleartype" content="on">
 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,500,700" rel="stylesheet">
+
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
@@ -48,8 +50,13 @@
 
     </head>
     <body>
+        <header>
+          <h1>Magic Fireball</h1>
+        </header>
         <main>
-            <img id="die" src="img/firedie.png" />
+            <div id="ball-container">
+              <img id="die" src="img/fireball.png" />
+            </div>
             <panel id="rule">
                 <h2 id="rule-title"></h2>
                 <p id="rule-body"></p>

@@ -3,6 +3,7 @@
 
   /** Element constants */
   const die = $('#die');
+  const ballContainer = $('#ball-container');
   const rulePanel = $('#rule');
   const visibleRulePanel = $('#rule.show');
   const ruleTitle = $('#rule-title');
@@ -19,13 +20,24 @@
    * Display a new rule from DB
    */
   function newRule() {
-   die.addClass('spin');
+    if(die.hasClass('spin')) {
+      die.removeClass('spin');
+      _.delay(function () {
+        die.addClass('spin');
+      }, 50);
+    } else {
+      die.addClass('spin');
+
+    }
+
+   ballContainer.removeClass('grow');
    rulePanel.removeClass('show');
 
    // The sample should pull instantly, but there's no need to wait
    let rule = _.sample(DB.rules);
    // Waiting 400ms gives time for the old panel to disappear
    _.delay(function () {
+     ballContainer.addClass('grow');
      ruleTitle.text(rule.title);
      ruleBody.text(rule.body);
    }, 400);
@@ -38,9 +50,10 @@
    //Waiting 1000ms lets the spinner complete its animation
    _.delay(function () {
      die.removeClass('spin');
-   }, 1000);
+   }, 2000);
   }
 
   /** Call newRule on click */
-  $(document).click(newRule);
+  die.click(newRule);
+  rulePanel.click(newRule);
 })();
