@@ -1,32 +1,46 @@
-/** Database file */
-const DB = $.getJSON('db.json', function (data) {
-  console.log(data);
-  return data;
-});
+(function () {
+  'use strict'
 
-/** Element constants */
-const die = $('#die');
-const rulePanel = $('#rule');
-const ruleTitle = $('#rule-title');
-const ruleBody = $('#rule-body');
+  /** Element constants */
+  const die = $('#die');
+  const rulePanel = $('#rule');
+  const visibleRulePanel = $('#rule.show');
+  const ruleTitle = $('#rule-title');
+  const ruleBody = $('#rule-body');
 
-die.on('click', function (e) {
-  die.addClass('spin');
+  /** Database file */
+  let DB;
 
-  _.delay(function () {
-    rulePanel.addClass('show');
-  }, 600);
+  $.getJSON('db.json', function (data) {
+    DB = data;
+  });
 
-  _.delay(function () {
-    die.removeClass('spin');
-  }, 1000);
+  /**
+   * Display a new rule from DB
+   */
+  function newRule() {
+   die.addClass('spin');
+   rulePanel.removeClass('show');
 
-  let rule = _.sample(DB);
-  ruleTitle.text(rule.title);
-  ruleBody.text(rule.body);
+   // The sample should pull instantly, but there's no need to wait
+   let rule = _.sample(DB.rules);
+   // Waiting 400ms gives time for the old panel to disappear
+   _.delay(function () {
+     ruleTitle.text(rule.title);
+     ruleBody.text(rule.body);
+   }, 400);
 
-});
+   //Waiting 600ms causes the panel to finish appearing by the time spinner stops
+   _.delay(function () {
+     rulePanel.addClass('show');
+   }, 600);
 
-$(document).click(function() {
-  $('#rule.show').removeClass('show');
-});
+   //Waiting 1000ms lets the spinner complete its animation
+   _.delay(function () {
+     die.removeClass('spin');
+   }, 1000);
+  }
+
+  /** Call newRule on click */
+  $(document).click(newRule);
+})();
