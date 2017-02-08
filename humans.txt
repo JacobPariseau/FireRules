@@ -3,11 +3,13 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Developer: Jacob Pariseau
+    Twitter: @jacobpariseau
+    From: Edmonton, Alberta, Canada
 
 # THANKS
 
-    <name>
+    Thanks to all the friends I've partied with and the horde of Reddit for masses of rule ideas
 
 # TECHNOLOGY COLOPHON
 

@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "name": "Mobile Boilerplate",
+  "name": "Magic Fireball",
   "launch_path": "/index.html",
-  "description": "A front-end template that helps you build fast, modern mobile web apps.",
+  "description": "A Webapp that generates drinking game rules for your next party.",
   "icons": {
     "60": "/img/touch/touch-icon-60x60.png",
     "128": "/img/touch/touch-icon-128x128.png"
@@ -19,8 +19,8 @@
   },
   "locales": {
     "en": {
-      "name": "Mobile Boilerplate",
-      "description": "A front-end template that helps you build fast, modern mobile web apps."
+      "name": "Magic Fireball",
+      "description": "A Webapp that generates drinking game rules for your next party."
     }
   }
 }

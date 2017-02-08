@@ -164,6 +164,7 @@ footer {
     transform: translate3d(20%, 30%, 0) rotate(-90deg);
   }
 }
+
 panel {
   width: 480px;
   max-width: 90%;
@@ -207,14 +208,6 @@ panel.show {
       font-size: 42px;
     }
 }
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
