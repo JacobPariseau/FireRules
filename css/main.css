@@ -97,6 +97,21 @@ footer {
   right: 0;
 }
 
+#settings-panel {
+  position: absolute;
+  left: 50%;
+  top: 0rem;
+  transform: translateX(-50%) translateY(-100%);
+  -webkit-transform: translateX(-50%) translateY(-100%);
+  background: white;
+  color: black;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+#settings-panel label {
+  display: block;
+}
 .don-share {
   display: inline-block;
 }
@@ -110,8 +125,6 @@ footer {
           transform-origin: 50% 35%;
   opacity: 1;
   -webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
-  transition: opacity 0.4s, -webkit-transform 0.4s;
-  transition: transform 0.4s, opacity 0.4s;
   transition: transform 0.4s, opacity 0.4s, -webkit-transform 0.4s;
 }
 
@@ -120,8 +133,6 @@ footer {
           transform: scale(4);
   opacity: 0;
   -webkit-transition: opacity 1.5s, -webkit-transform 1.5s;
-  transition: opacity 1.5s, -webkit-transform 1.5s;
-  transition: transform 1.5s, opacity 1.5s;
   transition: transform 1.5s, opacity 1.5s, -webkit-transform 1.5s;
 
 }
@@ -228,7 +239,7 @@ footer {
   }
 }
 
-panel {
+#rule {
   width: 480px;
   max-width: 90%;
   height: 100px;
@@ -245,18 +256,14 @@ panel {
   -webkit-transform: scale(0);
           transform: scale(0);
   -webkit-transition: opacity 0.4s, -webkit-transform 0.4s;
-  transition: opacity 0.4s, -webkit-transform 0.4s;
-  transition: opacity 0.4s, transform 0.4s;
   transition: opacity 0.4s, transform 0.4s, -webkit-transform 0.4s;
 }
 
-panel.show {
+#rule.show {
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: opacity 1s, -webkit-transform 1.2s;
-  transition: opacity 1s, -webkit-transform 1.2s;
-  transition: opacity 1s, transform 1.2s;
   transition: opacity 1s, transform 1.2s, -webkit-transform 1.2s;
 }
 

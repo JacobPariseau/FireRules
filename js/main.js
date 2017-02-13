@@ -8,6 +8,8 @@
   const visibleRulePanel = $('#rule.show');
   const ruleTitle = $('#rule-title');
   const ruleBody = $('#rule-body');
+  const rules = $('#settings-rules');
+  const challenges = $('#settings-challenges');
 
   /** Database file */
   let DB;
@@ -33,8 +35,18 @@
    ballContainer.removeClass('grow');
    rulePanel.removeClass('show');
 
+   let rule;
    // The sample should pull instantly, but there's no need to wait
-   let rule = _.sample(DB.rules);
+   if(rules.is(":checked") && challenges.is(":checked")) {
+     //User wants all rules
+     rule = _.sample(DB.rules);
+   } else if (challenges.is(":checked")) {
+     //User wants just challenges
+     rule = _.sample(_.filter(DB.rules, {type: 'challenge'}));
+   } else {
+     //User wants status rules
+     rule = _.sample(_.filter(DB.rules, {type: 'rule'}));
+   }
    // Waiting 400ms gives time for the old panel to disappear
    _.delay(function () {
      ballContainer.addClass('grow');
