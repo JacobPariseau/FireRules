@@ -97,21 +97,6 @@ footer {
   right: 0;
 }
 
-#settings-panel {
-  position: absolute;
-  left: 50%;
-  top: 0rem;
-  transform: translateX(-50%) translateY(-100%);
-  -webkit-transform: translateX(-50%) translateY(-100%);
-  background: white;
-  color: black;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-
-#settings-panel label {
-  display: block;
-}
 .don-share {
   display: inline-block;
 }
@@ -275,6 +260,14 @@ footer {
 
 #rule-body {
   text-align: center;
+}
+
+#rule button {
+  background: rgb(230,81,0);
+  border: 0;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin: 0.25rem;
 }
 
 @media only screen and (min-width: 530px) {

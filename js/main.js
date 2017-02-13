@@ -8,8 +8,8 @@
   const visibleRulePanel = $('#rule.show');
   const ruleTitle = $('#rule-title');
   const ruleBody = $('#rule-body');
-  const rules = $('#settings-rules');
-  const challenges = $('#settings-challenges');
+  const ruleButton = $('#rule-button');
+  const challengeButton = $('#challenge-button');
 
   /** Database file */
   let DB;
@@ -21,7 +21,7 @@
   /**
    * Display a new rule from DB
    */
-  function newRule() {
+  function newRule(filter) {
     if(die.hasClass('spin')) {
       die.removeClass('spin');
       _.delay(function () {
@@ -35,18 +35,9 @@
    ballContainer.removeClass('grow');
    rulePanel.removeClass('show');
 
-   let rule;
    // The sample should pull instantly, but there's no need to wait
-   if(rules.is(":checked") && challenges.is(":checked")) {
-     //User wants all rules
-     rule = _.sample(DB.rules);
-   } else if (challenges.is(":checked")) {
-     //User wants just challenges
-     rule = _.sample(_.filter(DB.rules, {type: 'challenge'}));
-   } else {
-     //User wants status rules
-     rule = _.sample(_.filter(DB.rules, {type: 'rule'}));
-   }
+   let rule = _.sample(_.filter(DB.rules, filter));
+
    // Waiting 400ms gives time for the old panel to disappear
    _.delay(function () {
      ballContainer.addClass('grow');
@@ -66,6 +57,8 @@
   }
 
   /** Call newRule on click */
-  die.click(newRule);
-  rulePanel.click(newRule);
+  die.click( function () { newRule({}); });
+  ruleButton.click( function () { newRule({type: 'rule'}); });
+  challengeButton.click( function () { newRule({type: 'challenge'}); });
+  
 })();
